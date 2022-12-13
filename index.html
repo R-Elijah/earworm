@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="A website for music sharing." />
+        <meta name="keywords" content="Music, Songs" />
+        <meta name="author" content="Elijah Reddy" />
+        <title>earworm - Home</title>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <link rel="stylesheet" href="styles/site.css" />
+    </head>
+    <body>
+        <h1>earworm</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="new.html">New Songs</a></li>
+                <li><a href="submit.html">Add Song</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <p>
+                Songs listed by number of votes. Simply click on the button
+                showing the vote count to vote for a specific song.
+            </p>
+            <script id="song-template" type="text/x-handlebars-template">
+                {{#each this}}
+                    <article>
+                        <h2 class="name">{{name}}</h2>
+                        <h3 class="artist">{{artist}}</h3>
+                        <button
+                            id="btn-{{id}}"
+                            class="vote"
+                            onclick="vote(this.dataset.id, this.dataset.index)"
+                            data-id="{{id}}"
+                            data-index="{{@index}}"
+                        >ᐱ {{votes}}</button>
+                        <iframe
+                            class="yt"
+                            src="{{yt}}"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                        {{#if apple}}
+                            <iframe
+                                allow="autoplay *; encrypted-media *;"
+                                frameborder="0"
+                                class="apple"
+                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                                src="{{apple}}"
+                            ></iframe>
+                        {{/if}}
+                        {{#if spotify}}
+                            <iframe
+                                class="spotify"
+                                src="{{spotify}}"
+                                frameBorder="0"
+                                allowfullscreen=""
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy"
+                            ></iframe>
+                        {{/if}}
+                    </article>
+                {{/each}}
+            </script>
+        </main>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

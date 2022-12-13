@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="The page to submit new songs to earworm."
+        />
+        <meta name="keywords" content="Music, Songs" />
+        <meta name="author" content="Elijah Reddy" />
+        <title>earworm - Add Song</title>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <link rel="stylesheet" href="styles/site.css" />
+    </head>
+    <body>
+        <h1>earworm</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="new.html">New Songs</a></li>
+                <li><a href="submit.html">Add Song</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <h2>Submit a song</h2>
+            <p>
+                Enter in the details for the song you want to submit and click
+                the submit button.
+            </p>
+            <p>
+                The song name, artist, and YouTube link are required. Apple
+                Music and Spotify links are optional.
+            </p>
+            <form>
+                <label for="name">Song Name:</label>
+                <input type="text" id="name" name="name" placeholder="e.g. The Sixth Sense" />
+                <label for="artist">Artist:</label>
+                <input type="text" id="artist" name="artist" placeholder="e.g. Reol" />
+                <label for="yt-link">YouTube Link:</label>
+                <input type="url" id="yt-link" name="yt-link" placeholder="e.g. https://www.youtube.com/watch?v=Ue6VQTcKPQo" />
+                <label for="apple-link">Apple Music Link:</label>
+                <input type="url" id="apple-link" name="apple-link" placeholder="e.g. https://music.apple.com/us/album/the-sixth-sense/1523255475?i=1523255476" />
+                <label for="spotify-link">Spotify Link:</label>
+                <input type="url" id="spotify-link" name="spotify-link" placeholder="e.g. https://open.spotify.com/track/7JoAEFSQcQVP8CVQs9evCK" />
+            </form>
+            <h3 id="success"></h3>
+            <h3 id="error"></h3>
+            <button id="submit">Submit</button>
+        </main>
+        <script src="scripts/submit.js"></script>
+    </body>
+</html>
