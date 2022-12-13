@@ -1,8 +1,10 @@
+import {apiLink} from './api-link.js';
+
 let songData = [];
 window.addEventListener("DOMContentLoaded", (event) => {
     const main = document.getElementById("main");
 
-    fetch("http://localhost:3600/songs")
+    fetch(apiLink + "/songs")
         .then((response) => response.json())
         .then((data) => {
             songData = data;
@@ -29,7 +31,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 // vote function to submit a vote for a specific song to the api
 function vote(id, index) {
-    fetch("http://localhost:3600/vote", {
+    fetch(apiLink + "/vote", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

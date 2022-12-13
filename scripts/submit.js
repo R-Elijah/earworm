@@ -1,9 +1,4 @@
-//https://open.spotify.com/track/0ttyQPhxTXajLR9vNCBvV9
-//https://open.spotify.com/embed/track/0ttyQPhxTXajLR9vNCBvV9?utm_source=generator
-//https://music.apple.com/in/album/cant-hold-us-feat-ray-dalton/1065728572?i=1065728690
-//https://embed.music.apple.com/in/album/cant-hold-us-feat-ray-dalton/1065728572?i=1065728690
-//https://www.youtube.com/watch?v=Ue6VQTcKPQo
-//https://www.youtube.com/embed/Ue6VQTcKPQo
+import {apiLink} from './api-link.js';
 
 window.addEventListener("DOMContentLoaded", (event) => {
     let submitBtn = document.getElementById("submit");
@@ -52,7 +47,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             spotify: spotifyEm,
         };
 
-        fetch("http://localhost:3600/song", {
+        fetch(apiLink + "/song", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

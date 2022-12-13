@@ -1,0 +1,1 @@
+export const apiLink = "https://e12.mystphy.sx/api";
