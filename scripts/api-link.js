@@ -1,1 +1,1 @@
-export const apiLink = "https://e12.mystphy.sx/api";
+const apiLink = "http://localhost:3600";

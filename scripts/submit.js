@@ -1,5 +1,3 @@
-import {apiLink} from './api-link.js';
-
 window.addEventListener("DOMContentLoaded", (event) => {
     let submitBtn = document.getElementById("submit");
     let success = document.getElementById("success");

@@ -1,5 +1,3 @@
-import {apiLink} from './api-link.js';
-
 let songData = [];
 window.addEventListener("DOMContentLoaded", (event) => {
     const main = document.getElementById("main");
