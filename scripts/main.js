@@ -7,10 +7,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         .then((data) => {
             songData = data;
             //https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-            if (window.location.pathname.includes("index")) {
-                songData.sort((a, b) => b.votes - a.votes);
-            } else {
+            if (window.location.pathname.includes("new")) {
                 songData.reverse();
+            } else {
+                songData.sort((a, b) => b.votes - a.votes);
             }
             console.log(songData);
             // grab the source
